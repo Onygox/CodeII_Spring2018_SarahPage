@@ -6,7 +6,8 @@ class Ball {
   Ball (PVector loc, PVector vel, color col) {
     location = loc;
     velocity = vel;
-    ballColor = col;
+    ballColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), int(random(0, 255))); 
+
   }
   
   void displayBall() {
@@ -14,7 +15,7 @@ class Ball {
     fill(ballColor);
     ellipse(location.x, location.y, 20, 20);
     location.add(velocity);
-    println(location.x, location.y);
+    //println(location.x, location.y);
     if (mouseIsPressed) {
       resetBall(mouse.x, mouse.y);
       mouseIsPressed = false;
@@ -29,8 +30,9 @@ class Ball {
   
   void resetBall(float vecx, float vecy) {
     location = new PVector(0, 0);
-    velocity = new PVector(vecx/15, vecy/15);
-    ballColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255))); 
+    velocity = new PVector(vecx/30, vecy/30);
+    //ballColor = color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255))); 
+    balls.add(new Ball(location, velocity, 0));
   }
   
 }
