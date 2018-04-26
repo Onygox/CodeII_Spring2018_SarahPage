@@ -20,12 +20,13 @@ void draw() {
   mouse = new PVector(mouseX, mouseY);
   center = new PVector(width/2, height);
   mouse.sub(center);
-  line(0, 0, mouse.x, mouse.y);
   textAlign(CENTER, CENTER);
   text("Click to throw a ball!", 0, -height/2);
   for (int i = 0; i < balls.size(); i++) {
    balls.get(i).displayBall(); 
   }
+  stroke(0);
+  line(0, 0, mouse.x, mouse.y);
   //ball01.displayBall();
 }
 
